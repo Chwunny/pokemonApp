@@ -29,30 +29,36 @@ const types = {
 
 
 const randomPokemon = () => {
-    axios.get(`https://pokeapi.co/api/v2/pokemon/${Math.floor(Math.random() * 898)}`)
-    .then(res => {
-        document.getElementById('shinyPokemon').style.zIndex = 1
-
-        console.log(res.data)
-        let name = res.data.species.name
-        name = name.charAt(0).toUpperCase() + name.slice(1)
-        let type = res.data.types[0].type.name
-        let id =  '#' + res.data.id
-        let spriteImg = res.data.sprites.front_default
-        let shinyImg = res.data.sprites.front_shiny
-
-        document.getElementById('nameBox2').textContent = name
-        document.getElementById('nameBox1').textContent =  id + ' ' + name
-        document.getElementById('defaultPokemon').src = spriteImg
-        document.getElementById('shinyPokemon').src = shinyImg
-        document.getElementById('selectedId').textContent = id
-        
-        for (const prop in types){
-            if (type === prop){
-                document.getElementById('typeBox').src = types[prop]
+    try {
+        axios.get(`https://pokeapi.co/api/v2/pokemon/${Math.floor(Math.random() * 898)}`)
+        .then(res => {
+            document.getElementById('shinyPokemon').style.zIndex = 1
+    
+            console.log(res.data)
+            let name = res.data.species.name
+            name = name.charAt(0).toUpperCase() + name.slice(1)
+            let type = res.data.types[0].type.name
+            let id =  '#' + res.data.id
+            let spriteImg = res.data.sprites.front_default
+            let shinyImg = res.data.sprites.front_shiny
+    
+            document.getElementById('nameBox2').textContent = name
+            document.getElementById('nameBox1').textContent =  id + ' ' + name
+            document.getElementById('defaultPokemon').src = spriteImg
+            document.getElementById('shinyPokemon').src = shinyImg
+            document.getElementById('selectedId').textContent = id
+            
+            for (const prop in types){
+                if (type === prop){
+                    document.getElementById('typeBox').src = types[prop]
+                }
             }
-        }
-    })
+        })
+        Rollbar.info("Search successful")
+
+    } catch (error) {
+        Rollbar.critical("Search failed")
+    }
 }
 
 const bestPokemon = () => {
