@@ -1,6 +1,8 @@
 
 let bestPokemonIds = [384, 151, 493, 38, 143, 157, 245, 25, 83, 135]
 
+const form = document.querySelector('form')
+
 const types = {
     "bug" : "/photos/BugIC.png",
     "dark" : "/photos/DarkIC.png",
@@ -87,6 +89,37 @@ const getDefault = () => {
     document.getElementById('shinyPokemon').style.zIndex = 1
 }
 
+const submitHandler = (e) => {
+    e.preventDefault()
+    console.log(form.input.value)
+    
+    axios.get(`https://pokeapi.co/api/v2/pokemon/${form.input.value}`)
+    .then(res => {
+        document.getElementById('shinyPokemon').style.zIndex = 1
+
+        console.log(res.data)
+        let name = res.data.species.name
+        name = name.charAt(0).toUpperCase() + name.slice(1)
+        let type = res.data.types[0].type.name
+        let id = '#' + res.data.id
+        let spriteImg = res.data.sprites.front_default
+        let shinyImg = res.data.sprites.front_shiny
+
+        document.getElementById('nameBox2').textContent = name
+        document.getElementById('selectedId').textContent = id
+        document.getElementById('nameBox1').textContent =  id + ' ' + name
+        document.getElementById('defaultPokemon').src = spriteImg
+        document.getElementById('shinyPokemon').src = shinyImg
+        
+        for (const prop in types){
+            if (type === prop){
+                document.getElementById('typeBox').src = types[prop]
+            }
+        }
+
+    })
+
+}
 
 document.getElementById('randomPokemon').addEventListener('click', randomPokemon)
 document.getElementById('bestPokemon').addEventListener('click', bestPokemon)
