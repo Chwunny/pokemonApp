@@ -1,5 +1,5 @@
 
-Rollbar.info("Rollbar is working")
+Rollbar.info("Rollbar on the front end is working")
 
 let bestPokemonIds = [384, 151, 493, 38, 143, 157, 245, 25, 83, 135]
 
@@ -93,7 +93,7 @@ const bestPokemon = () => {
         Rollbar.info("Best pokémon search successful")
 
     } catch (error) {
-        Rollbar.error("Best pokémon search failed")
+        Rollbar.critical("Best pokémon search failed")
     }
 }
 
@@ -140,7 +140,7 @@ const submitHandler = (e) => {
         Rollbar.info("Custom pokémon search successful")
 
     } catch (error) {
-        Rollbar.error("Custom pokémon search failed")
+        Rollbar.warning("Custom pokémon search failed")
     }
     
 }
