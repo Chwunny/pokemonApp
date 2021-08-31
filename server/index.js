@@ -28,5 +28,6 @@ app.use('/photos', express.static(path.join(__dirname, '../client/photos')))
 
 const port = process.env.PORT || 4005
 
+app.use(rollbar.errorHandler())
 
 app.listen(port, () => console.log(`Server up and running on ${port}`));
