@@ -22,19 +22,19 @@ const types = {
     "water" : "/photos/WaterIC.png"
 }
 
-const fortuneButton = () => {
-    axios.get("https://pokedex-zk.herokuapp.com/api/fortune/")
-    .then( res => {
-        alert(res.data)
-    });
+// const fortuneButton = () => {
+//     axios.get("https://pokedex-zk.herokuapp.com/api/fortune/")
+//     .then( res => {
+//         alert(res.data)
+//     });
 }
 
-const kanyeQuote = () => {
-    axios.get("https://api.kanye.rest")
-    .then(res => {
-        alert(res.data.quote + " -Kanye")
-    })
-}
+// const kanyeQuote = () => {
+//     axios.get("https://api.kanye.rest")
+//     .then(res => {
+//         alert(res.data.quote + " -Kanye")
+//     })
+// }
 
 const randomPokemon = () => {
     axios.get(`https://pokeapi.co/api/v2/pokemon/${Math.floor(Math.random() * 898)}`)
