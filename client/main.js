@@ -1,4 +1,6 @@
 
+Rollbar.info("Rollbar is working")
+
 let bestPokemonIds = [384, 151, 493, 38, 143, 157, 245, 25, 83, 135]
 
 const form = document.querySelector('form')

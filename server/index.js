@@ -30,7 +30,7 @@ app.use('/photos', express.static(path.join(__dirname, '../client/photos')))
 // try {                                             
 //   nonExistentFunction()
 // } catch (error) {                                  // Bad function to test rollbar
-//   rollbar.error('No function defined')
+//   rollbar.error(error)
 // }
 
 const port = process.env.PORT || 4005
