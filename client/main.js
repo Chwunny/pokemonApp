@@ -92,33 +92,34 @@ const getDefault = () => {
 
 const submitHandler = (e) => {
     e.preventDefault()
-    console.log(searchInput.value)
+    // console.log(searchInput.value)
+    if (searchInput.value.length > 0){
+        axios.get(`https://pokeapi.co/api/v2/pokemon/${searchInput.value}`)
+        .then(res => {
+            document.getElementById('shinyPokemon').style.zIndex = 1
 
-    axios.get(`https://pokeapi.co/api/v2/pokemon/${searchInput.value}`)
-    .then(res => {
-        document.getElementById('shinyPokemon').style.zIndex = 1
+            console.log(res.data)
+            let name = res.data.species.name
+            name = name.charAt(0).toUpperCase() + name.slice(1)
+            let type = res.data.types[0].type.name
+            let id = '#' + res.data.id
+            let spriteImg = res.data.sprites.front_default
+            let shinyImg = res.data.sprites.front_shiny
 
-        console.log(res.data)
-        let name = res.data.species.name
-        name = name.charAt(0).toUpperCase() + name.slice(1)
-        let type = res.data.types[0].type.name
-        let id = '#' + res.data.id
-        let spriteImg = res.data.sprites.front_default
-        let shinyImg = res.data.sprites.front_shiny
-
-        document.getElementById('nameBox2').textContent = name
-        document.getElementById('selectedId').textContent = id
-        document.getElementById('nameBox1').textContent =  id + ' ' + name
-        document.getElementById('defaultPokemon').src = spriteImg
-        document.getElementById('shinyPokemon').src = shinyImg
+            document.getElementById('nameBox2').textContent = name
+            document.getElementById('selectedId').textContent = id
+            document.getElementById('nameBox1').textContent =  id + ' ' + name
+            document.getElementById('defaultPokemon').src = spriteImg
+            document.getElementById('shinyPokemon').src = shinyImg
         
-        for (const prop in types){
-            if (type === prop){
-                document.getElementById('typeBox').src = types[prop]
+            for (const prop in types){
+                if (type === prop){
+                        document.getElementById('typeBox').src = types[prop]
+                }
             }
-        }
 
-    })
+        })
+    }
     searchInput.value = ''
 }
 
