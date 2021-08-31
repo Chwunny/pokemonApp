@@ -2,6 +2,7 @@
 let bestPokemonIds = [384, 151, 493, 38, 143, 157, 245, 25, 83, 135]
 
 const form = document.querySelector('form')
+const searchInput = document.getElementById('pokemonSearch')
 
 const types = {
     "bug" : "/photos/BugIC.png",
@@ -91,9 +92,9 @@ const getDefault = () => {
 
 const submitHandler = (e) => {
     e.preventDefault()
-    console.log(form.input.value)
+    console.log(searchInput.value)
 
-    axios.get(`https://pokeapi.co/api/v2/pokemon/${form.input.value}`)
+    axios.get(`https://pokeapi.co/api/v2/pokemon/${searchInput.value}`)
     .then(res => {
         document.getElementById('shinyPokemon').style.zIndex = 1
 
