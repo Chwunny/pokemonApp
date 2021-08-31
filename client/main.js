@@ -102,8 +102,7 @@ const getDefault = () => {
     document.getElementById('shinyPokemon').style.zIndex = 1
 }
 
-document.getElementById('fortuneButton').addEventListener('click', fortuneButton )
-document.getElementById('kanyeButton').addEventListener('click', kanyeQuote)
+
 document.getElementById('randomPokemon').addEventListener('click', randomPokemon)
 document.getElementById('bestPokemon').addEventListener('click', bestPokemon)
 document.getElementById('shinyButton').addEventListener('click', getShiny)
