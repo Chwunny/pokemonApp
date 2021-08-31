@@ -26,6 +26,13 @@ app.use("/js", express.static(path.join(__dirname, '../client/main.js')))
 
 app.use('/photos', express.static(path.join(__dirname, '../client/photos')))
 
+
+try {
+  nonExistentFunction()
+} catch (error) {
+  rollbar.error('No function defined')
+}
+
 const port = process.env.PORT || 4005
 
 app.use(rollbar.errorHandler())

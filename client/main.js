@@ -22,11 +22,6 @@ const types = {
     "water" : "/photos/WaterIC.png"
 }
 
-try {
-    nonExistentFunction()
-} catch (error) {
-    rollbar.error('No function defined')
-}
 
 const randomPokemon = () => {
     axios.get(`https://pokeapi.co/api/v2/pokemon/${Math.floor(Math.random() * 898)}`)
