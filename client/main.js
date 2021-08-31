@@ -92,7 +92,7 @@ const getDefault = () => {
 const submitHandler = (e) => {
     e.preventDefault()
     console.log(form.input.value)
-    
+
     axios.get(`https://pokeapi.co/api/v2/pokemon/${form.input.value}`)
     .then(res => {
         document.getElementById('shinyPokemon').style.zIndex = 1
@@ -125,3 +125,4 @@ document.getElementById('randomPokemon').addEventListener('click', randomPokemon
 document.getElementById('bestPokemon').addEventListener('click', bestPokemon)
 document.getElementById('shinyButton').addEventListener('click', getShiny)
 document.getElementById('defaultButton').addEventListener('click', getDefault)
+form.addEventListener('submit', submitHandler)
