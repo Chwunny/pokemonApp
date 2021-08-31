@@ -1,4 +1,4 @@
-// const basePhotoUrl = " /photos/"
+
 let bestPokemonIds = [384, 151, 493, 38, 143, 157, 245, 25, 83, 135]
 
 const types = {
@@ -22,19 +22,6 @@ const types = {
     "water" : "/photos/WaterIC.png"
 }
 
-// const fortuneButton = () => {
-//     axios.get("https://pokedex-zk.herokuapp.com/api/fortune/")
-//     .then( res => {
-//         alert(res.data)
-//     });
-// }
-
-// const kanyeQuote = () => {
-//     axios.get("https://api.kanye.rest")
-//     .then(res => {
-//         alert(res.data.quote + " -Kanye")
-//     })
-// }
 
 const randomPokemon = () => {
     axios.get(`https://pokeapi.co/api/v2/pokemon/${Math.floor(Math.random() * 898)}`)
@@ -45,7 +32,6 @@ const randomPokemon = () => {
         let name = res.data.species.name
         name = name.charAt(0).toUpperCase() + name.slice(1)
         let type = res.data.types[0].type.name
-        // type = "Type: " + type.charAt(0).toUpperCase() + type.slice(1)
         let id =  '#' + res.data.id
         let spriteImg = res.data.sprites.front_default
         let shinyImg = res.data.sprites.front_shiny
@@ -74,7 +60,6 @@ const bestPokemon = () => {
         let name = res.data.species.name
         name = name.charAt(0).toUpperCase() + name.slice(1)
         let type = res.data.types[0].type.name
-        // type = "Type: " + type.charAt(0).toUpperCase() + type.slice(1)
         let id = '#' + res.data.id
         let spriteImg = res.data.sprites.front_default
         let shinyImg = res.data.sprites.front_shiny
