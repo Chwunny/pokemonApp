@@ -27,7 +27,7 @@ const types = {
 //     .then( res => {
 //         alert(res.data)
 //     });
-}
+// }
 
 // const kanyeQuote = () => {
 //     axios.get("https://api.kanye.rest")
