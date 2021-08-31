@@ -119,7 +119,7 @@ const submitHandler = (e) => {
         }
 
     })
-
+    searchInput.value = ''
 }
 
 document.getElementById('randomPokemon').addEventListener('click', randomPokemon)
