@@ -42,6 +42,17 @@ button {
     font-size: 20px;
 }
 
+#pokemonSearch {
+    background-color: white;
+    color: black;
+    border-radius: 2em;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    font-size: 15px;
+}
+
 #nameBox1 {
 height: 5vh;
 /* background-color: black; */
