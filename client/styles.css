@@ -21,13 +21,7 @@
     border: solid black;
 }
 
-/* #pokemonContent {
-    height: 50vh;
-    background-color: aqua;
-} */
-
 body {
-    background-color: black;
     font-size: 1em;
 }
 
@@ -121,4 +115,109 @@ img {
     /* background-color: black; */
     top: 95vh;
     left: 20.5vw;
+}
+
+
+/* Battle section */
+
+
+#pokemonBattle{
+    display: flex;
+    justify-content: center;
+    /* background-color: #f6706f; */
+}
+
+#battleImg {
+    /* Base image is 512 x 384px */
+    height: 768px;
+    width: 1024px;
+    background-image: url("/photos/pokemonBattle.jpg");
+    background-size: cover;
+}
+
+#pokemonBattleSearch {
+    background-color: white;
+    color: black;
+    border-radius: 2em;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    font-size: 15px;
+}
+
+#battleUi {
+    height: 192px;
+    width: 1024px;
+    /* background-color: white; */
+    position: absolute;
+    top: 1712px;
+    background-image: url("/photos/battleUi.jpg");
+    background-size: cover;
+    z-index: 2;
+}
+
+#opponentNameBox {
+    height: 40px;
+    width: 290px;
+    /* background-color: black; */
+    position: relative;
+    top: 92px;
+    left: 10px;
+    color: #4b4546;
+    font-size: 3rem;
+    font-family: 'VT323', monospace;
+}
+
+#opponentPokemon {
+    height: 220px;
+    width: 220px;
+    position: absolute;
+    left: 1095px;
+    top: 1305px;
+}
+
+#yourPokemonNameBox {
+    height: 40px;
+    width: 290px;
+    /* background-color: black; */
+    position: absolute;
+    left: 1055px;
+    top: 1540px;
+    color: #4b4546;
+    font-size: 3rem;
+    font-family: 'VT323', monospace;
+}
+
+#yourPokemon {
+    height: 400px;
+    width: 400px;
+    position: absolute;
+    left: 500px;
+    top: 1420px;
+    z-index: 0;
+}
+
+#queryText {
+    height: 120px;
+    width: 405px;
+    /* background-color: black; */
+    position: absolute;
+    top: 1750px;
+    left: 490px;
+    z-index: 3;
+    color: #4b4546;
+    font-size: 3rem;
+    font-family: 'VT323', monospace;
+}
+
+#battleScreen {
+    width: 100vw;
+    height: 768px;
+    /* background-color: aquamarine; */
+    display: flex;
+    justify-content: center;
+
+    background-image: url("photos/310e2ce9-aa79-47d9-b419-cf4a67248f1a.jpg");
+    background-size: cover;
 }
