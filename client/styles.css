@@ -221,3 +221,15 @@ img {
     background-image: url("photos/310e2ce9-aa79-47d9-b419-cf4a67248f1a.jpg");
     background-size: cover;
 }
+
+.hidden {
+    visibility: hidden;
+}
+
+.halfVis {
+    opacity: 50%;
+}
+
+.transit {
+    transition: opacity 1s;
+}

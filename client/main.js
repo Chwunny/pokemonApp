@@ -74,6 +74,7 @@ const randomPokemon = () => {
             for (const prop in types){
                 if (type === prop){
                     document.getElementById('typeBox').src = types[prop]
+                    document.getElementById('typeBox').classList.remove('hidden')
                 }
             }
         })
@@ -109,6 +110,7 @@ const bestPokemon = () => {
             for (const prop in types){
                 if (type === prop){
                     document.getElementById('typeBox').src = types[prop]
+                    document.getElementById('typeBox').classList.remove('hidden')
                 }
             }
     
@@ -154,6 +156,7 @@ const submitHandler = (e) => {
                 for (const prop in types){
                     if (type === prop){
                             document.getElementById('typeBox').src = types[prop]
+                            document.getElementById('typeBox').classList.remove('hidden')
                     }
                 }
     
@@ -171,20 +174,23 @@ const submitHandler = (e) => {
 /// Pokemon battle section
 let opponentType = '' 
 let yourType = ''
+let opponentName = ''
+let name = ''
 
 const opponentPokemon = () => {
     axios.get(`https://pokeapi.co/api/v2/pokemon/${Math.floor(Math.random() * 898)}`)
         .then(res => {
             // console.log(res.data)
-            let name = res.data.species.name
-            name = name.charAt(0).toUpperCase() + name.slice(1)
+            opponentName = res.data.species.name
+            opponentName = opponentName.charAt(0).toUpperCase() + opponentName.slice(1)
             opponentType = res.data.types[0].type.name
 
             let spriteImg = res.data.sprites.front_default
 
-            document.getElementById('opponentNameBox').textContent = name
+            document.getElementById('opponentPokemon').style.opacity = 1
+            document.getElementById('opponentNameBox').textContent = opponentName
             document.getElementById('opponentPokemon').src = spriteImg
-            
+            document.getElementById('opponentPokemon').classList.remove('hidden')
         })
     }
 
@@ -192,14 +198,16 @@ const opponentPokemon = () => {
 const yourRandomPokemon = () => {
     axios.get(`https://pokeapi.co/api/v2/pokemon/${Math.floor(Math.random() * 898)}`)
     .then(res => {
-        let name = res.data.species.name
+        name = res.data.species.name
         name = name.charAt(0).toUpperCase() + name.slice(1)
         yourType = res.data.types[0].type.name
         
         let spriteImg = res.data.sprites.back_default
 
+        document.getElementById('yourPokemon').style.opacity = 1
         document.getElementById('yourPokemonNameBox').textContent = name
         document.getElementById('yourPokemon').src = spriteImg
+        document.getElementById('yourPokemon').classList.remove('hidden')
         document.getElementById('queryText').textContent = `What will ${name} do?`
 
     })
@@ -212,16 +220,18 @@ const battleSubmitHandler = (e) => {
     if (battleSearchInput.value.length > 0){
         axios.get(`https://pokeapi.co/api/v2/pokemon/${battleSearchInput.value}`)
         .then(res => {
-            let name = res.data.species.name
+            name = res.data.species.name
             name = name.charAt(0).toUpperCase() + name.slice(1)
             yourType = res.data.types[0].type.name
         
             let spriteImg = res.data.sprites.back_default
 
+            document.getElementById('yourPokemon').style.opacity = 1
             document.getElementById('yourPokemonNameBox').textContent = name
             document.getElementById('yourPokemon').src = spriteImg
+            document.getElementById('yourPokemon').classList.remove('hidden')
             document.getElementById('queryText').textContent = `What will ${name} do?`
-            
+
         })
     }
     battleSearchInput.value = ''
@@ -229,18 +239,46 @@ const battleSubmitHandler = (e) => {
 
 
 const startFight = () => {
-//   console.log("opponent type:", opponentType, "weakness:", weakness[opponentType])
-//   console.log("your type:", yourType, "weakness:", weakness[yourType])
+
+  let query = document.getElementById('queryText')
+  let opponentPokemon = document.getElementById('opponentPokemon')
+  let yourPokemon = document.getElementById('yourPokemon')
+
+  opponentPokemon.style.opacity = 1
+  yourPokemon.style.opacity = 1
 
   if (weakness[opponentType].includes(yourType)){
-    console.log('You Win!')
-    // return
+    opponentPokemon.classList.remove('transit')
+
+    query.textContent = opponentName + ' has fainted! You win!'
+
+    setTimeout(function() {
+        opponentPokemon.classList.add('transit')
+        opponentPokemon.style.opacity = 0
+
+    })
+
   } else if (weakness[yourType].includes(opponentType)){
-      console.log('You Lose!')
-    //   return
+    yourPokemon.classList.remove('transit')
+
+    query.textContent = name + ' has fainted! You lose!'
+    
+    setTimeout(function() {
+        yourPokemon.classList.add('transit')
+        yourPokemon.style.opacity = 0
+        
+    })
+
   } else {
-      console.log('You Win!')
-    //   return
+    opponentPokemon.classList.remove('transit')
+
+    query.textContent = opponentName + ' has fainted! You win!'
+
+    setTimeout(function() {
+        opponentPokemon.classList.add('transit')
+        opponentPokemon.style.opacity = 0
+    
+    })
   }
 
 }
