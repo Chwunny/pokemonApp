@@ -129,8 +129,8 @@ img {
 
 #battleImg {
     /* Base image is 512 x 384px */
-    height: 768px;
-    width: 1024px;
+    height: 79.25;
+    width: 53.33vw;
     background-image: url("/photos/pokemonBattle.jpg");
     background-size: cover;
 }
@@ -147,64 +147,64 @@ img {
 }
 
 #battleUi {
-    height: 192px;
-    width: 1024px;
+    height: 19.84vh;
+    width: 53.33vw;
     /* background-color: white; */
     position: absolute;
-    top: 1712px;
+    top: 176.7vh;
     background-image: url("/photos/battleUi.jpg");
     background-size: cover;
     z-index: 2;
+    
 }
 
 #opponentNameBox {
-    height: 40px;
-    width: 290px;
+    height: 4.13vh;
+    width: 15.1vw;
     /* background-color: black; */
-    position: relative;
-    top: 92px;
-    left: 10px;
+    position: absolute;
+    top: 126.7vh;
+    left: 23.9vw;
     color: #4b4546;
     font-size: 3rem;
     font-family: 'VT323', monospace;
 }
 
 #opponentPokemon {
-    height: 220px;
-    width: 220px;
+    height: 22.73vh;
+    width: 11.46vw;
     position: absolute;
-    left: 1095px;
-    top: 1305px;
+    left: 57.03vw;
+    top: 134.85vh;
 }
 
 #yourPokemonNameBox {
-    height: 40px;
-    width: 290px;
-    /* background-color: black; */
+    height: 4.13vh;
+    width: 15.1vw;
     position: absolute;
-    left: 1055px;
-    top: 1540px;
+    left: 54.94vw;
+    top: 159.13vh;
     color: #4b4546;
     font-size: 3rem;
     font-family: 'VT323', monospace;
 }
 
 #yourPokemon {
-    height: 400px;
-    width: 400px;
+    height: 37vh;
+    width: 20.08vw;
     position: absolute;
-    left: 500px;
-    top: 1420px;
+    left: 26.04vw;
+    top: 147.73vh;
     z-index: 0;
 }
 
 #queryText {
-    height: 120px;
-    width: 405px;
+    height: 11.11vh;
+    width: 21.1vw;
     /* background-color: black; */
     position: absolute;
-    top: 1750px;
-    left: 490px;
+    top: 180.01vh;
+    left: 25.52vw;
     z-index: 3;
     color: #4b4546;
     font-size: 3rem;
@@ -213,7 +213,7 @@ img {
 
 #battleScreen {
     width: 100vw;
-    height: 768px;
+    height: 79.25vh;
     /* background-color: aquamarine; */
     display: flex;
     justify-content: center;
