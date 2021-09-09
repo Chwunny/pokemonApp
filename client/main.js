@@ -270,15 +270,29 @@ const startFight = () => {
     })
 
   } else {
-    opponentPokemon.classList.remove('transit')
-
-    query.textContent = opponentName + ' has fainted! You win!'
-
-    setTimeout(function() {
-        opponentPokemon.classList.add('transit')
-        opponentPokemon.style.opacity = 0
+    let decider = Math.random()
     
-    })
+    if (decider > .5){
+        opponentPokemon.classList.remove('transit')
+        query.textContent = opponentName + ' has fainted! You win!'
+        
+        setTimeout(function() {
+            opponentPokemon.classList.add('transit')
+            opponentPokemon.style.opacity = 0
+        
+        })
+    } else {
+        yourPokemon.classList.remove('transit')
+
+        query.textContent = name + ' has fainted! You lose!'
+        
+        setTimeout(function() {
+            yourPokemon.classList.add('transit')
+            yourPokemon.style.opacity = 0
+            
+        })
+    }
+
   }
 
 }
