@@ -1,235 +1,227 @@
-
 :root {
-    font-size: 100%;
+  font-size: 100%;
 }
-
-
-
 
 * {
-    padding: 0%;
-    margin: 0%;
-
+  padding: 0%;
+  margin: 0%;
 }
 .navBar {
-    display: flex;
-    height: 5vh;
-    width: 100vw;
-    justify-content: space-around;
-    align-items: center;
-    background-image: linear-gradient(to right, #f6706f, #c64443);
-    border: solid black;
+  display: flex;
+  height: 5vh;
+  width: 100vw;
+  justify-content: space-around;
+  align-items: center;
+  background-image: linear-gradient(to right, #f6706f, #c64443);
+  border: solid black;
 }
 
 body {
-    font-size: 1em;
+  font-size: 1em;
 }
 
 button {
-    background-color: #515151;
-    color: white;
-    border-radius: 2em;
-    padding-left: 20px;
-    padding-right: 20px;
-    padding-top: 5px;
-    padding-bottom: 5px;
-    font-size: 20px;
+  background-color: #515151;
+  color: white;
+  border-radius: 2em;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  font-size: 20px;
 }
 
 #pokemonSearch {
-    background-color: white;
-    color: black;
-    border-radius: 2em;
-    padding-left: 20px;
-    padding-right: 20px;
-    padding-top: 5px;
-    padding-bottom: 5px;
-    font-size: 15px;
+  background-color: white;
+  color: black;
+  border-radius: 2em;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  font-size: 15px;
 }
 
 #nameBox1 {
-height: 5vh;
-/* background-color: black; */
-position: absolute;
-top: 13vh;
-left: 18vw;
-text-align: left;
-font-size: 3rem;
-color: white;
+  height: 5vh;
+  /* background-color: black; */
+  position: absolute;
+  top: 13vh;
+  left: 18vw;
+  text-align: left;
+  font-size: 3rem;
+  color: white;
 }
 
 #nameBox2 {
-height: 5vh;
-/* background-color: black; */
-position: absolute;
-top: 55.5vh;
-left: 61vw;
-text-align: left;
-font-size: 3rem;
-color: white;
+  height: 5vh;
+  /* background-color: black; */
+  position: absolute;
+  top: 55.5vh;
+  left: 61vw;
+  text-align: left;
+  font-size: 3rem;
+  color: white;
 }
 
 #selectedId {
-height: 5vh;
-position: absolute;
-top: 55.5vh;
-left: 53.5vw;
-text-align: left;
-font-size: 3rem;
-color: #515151;
+  height: 5vh;
+  position: absolute;
+  top: 55.5vh;
+  left: 53.5vw;
+  text-align: left;
+  font-size: 3rem;
+  color: #515151;
 }
 
 #defaultPokemon {
-    position: absolute;
-    top: 52vh;
-    left: 18.5vw;
-    z-index: 2;
+  position: absolute;
+  top: 52vh;
+  left: 18.5vw;
+  z-index: 2;
 }
 #shinyPokemon {
-    position: absolute;
-    top: 52vh;
-    left: 18.5vw;
-    z-index: 1;
+  position: absolute;
+  top: 52vh;
+  left: 18.5vw;
+  z-index: 1;
 }
 
 img {
-    height: 30vh;
+  height: 30vh;
 }
 .container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 #pokedex {
-    background-image: url("/photos/fc8bc92c-ada1-444e-84f5-eee1797c87ba.jpg");
-    height: 106vh;
-    width: 100vw;
-    background-size: cover;
+  background-image: url("/photos/fc8bc92c-ada1-444e-84f5-eee1797c87ba.jpg");
+  height: 106vh;
+  width: 100vw;
+  background-size: cover;
 }
 
 #typeBox {
-    position: absolute;
-    height: 44px;
-    width: 200px;
-    /* background-color: black; */
-    top: 95vh;
-    left: 20.5vw;
+  position: absolute;
+  height: 44px;
+  width: 200px;
+  /* background-color: black; */
+  top: 95vh;
+  left: 20.5vw;
 }
-
 
 /* Battle section */
 
-
-#pokemonBattle{
-    display: flex;
-    justify-content: center;
-    /* background-color: #f6706f; */
+#pokemonBattle {
+  display: flex;
+  justify-content: center;
+  /* background-color: #f6706f; */
 }
 
 #battleImg {
-    /* Base image is 512 x 384px */
-    height: 79.25;
-    width: 53.33vw;
-    background-image: url("/photos/pokemonBattle.jpg");
-    background-size: cover;
+  /* Base image is 512 x 384px */
+  height: 79.25;
+  width: 53.33vw;
+  background-image: url("/photos/pokemonBattle.jpg");
+  background-size: cover;
 }
 
 #pokemonBattleSearch {
-    background-color: white;
-    color: black;
-    border-radius: 2em;
-    padding-left: 20px;
-    padding-right: 20px;
-    padding-top: 5px;
-    padding-bottom: 5px;
-    font-size: 15px;
+  background-color: white;
+  color: black;
+  border-radius: 2em;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  font-size: 15px;
 }
 
 #battleUi {
-    height: 19.84vh;
-    width: 53.33vw;
-    /* background-color: white; */
-    position: absolute;
-    top: 176.7vh;
-    background-image: url("/photos/battleUi.jpg");
-    background-size: cover;
-    z-index: 2;
-    
+  height: 19.84vh;
+  width: 53.33vw;
+  /* background-color: white; */
+  position: absolute;
+  top: 176.7vh;
+  background-image: url("/photos/battleUi.jpg");
+  background-size: cover;
+  z-index: 2;
 }
 
 #opponentNameBox {
-    height: 4.13vh;
-    width: 15.1vw;
-    /* background-color: black; */
-    position: absolute;
-    top: 126.7vh;
-    left: 23.9vw;
-    color: #4b4546;
-    font-size: 3rem;
-    font-family: 'VT323', monospace;
+  height: 4.13vh;
+  width: 15.1vw;
+  /* background-color: black; */
+  position: absolute;
+  top: 126.7vh;
+  left: 23.9vw;
+  color: #4b4546;
+  font-size: 3rem;
+  font-family: "VT323", monospace;
 }
 
 #opponentPokemon {
-    height: 22.73vh;
-    width: 11.46vw;
-    position: absolute;
-    left: 57.03vw;
-    top: 134.85vh;
+  height: 22.73vh;
+  width: 11.46vw;
+  position: absolute;
+  left: 57.03vw;
+  top: 134.85vh;
 }
 
 #yourPokemonNameBox {
-    height: 4.13vh;
-    width: 15.1vw;
-    position: absolute;
-    left: 54.94vw;
-    top: 159.13vh;
-    color: #4b4546;
-    font-size: 3rem;
-    font-family: 'VT323', monospace;
+  height: 4.13vh;
+  width: 15.1vw;
+  position: absolute;
+  left: 54.94vw;
+  top: 159.13vh;
+  color: #4b4546;
+  font-size: 3rem;
+  font-family: "VT323", monospace;
 }
 
 #yourPokemon {
-    height: 37vh;
-    width: 20.08vw;
-    position: absolute;
-    left: 26.04vw;
-    top: 147.73vh;
-    z-index: 0;
+  height: 37vh;
+  width: 20.08vw;
+  position: absolute;
+  left: 26.04vw;
+  top: 147.73vh;
+  z-index: 0;
 }
 
 #queryText {
-    height: 11.11vh;
-    width: 21.1vw;
-    /* background-color: black; */
-    position: absolute;
-    top: 180.01vh;
-    left: 25.52vw;
-    z-index: 3;
-    color: #4b4546;
-    font-size: 3rem;
-    font-family: 'VT323', monospace;
+  height: 11.11vh;
+  width: 21.1vw;
+  /* background-color: black; */
+  position: absolute;
+  top: 180.01vh;
+  left: 25.52vw;
+  z-index: 3;
+  color: #4b4546;
+  font-size: 3rem;
+  font-family: "VT323", monospace;
 }
 
 #battleScreen {
-    width: 100vw;
-    height: 79.25vh;
-    /* background-color: aquamarine; */
-    display: flex;
-    justify-content: center;
+  width: 100vw;
+  height: 79.25vh;
+  /* background-color: aquamarine; */
+  display: flex;
+  justify-content: center;
 
-    background-image: url("photos/310e2ce9-aa79-47d9-b419-cf4a67248f1a.jpg");
-    background-size: cover;
+  background-image: url("photos/310e2ce9-aa79-47d9-b419-cf4a67248f1a.jpg");
+  background-size: cover;
 }
 
 .hidden {
-    visibility: hidden;
+  visibility: hidden;
 }
 
 .halfVis {
-    opacity: 50%;
+  opacity: 50%;
 }
 
 .transit {
-    transition: opacity 1s;
+  transition: opacity 1s;
 }
